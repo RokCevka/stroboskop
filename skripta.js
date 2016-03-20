@@ -13,6 +13,11 @@ window.addEventListener('load', function() {
 		.addEventListener('click', dodajBarvo);
 		
 	//Odstrani barve
+	var odstraniBarvo = function(event){
+		document.querySelector("#barve").innerHTML = "";
+	}
+	document.querySelector("#odstraniBarve").addEventListener('click', odstraniBarvo);
+	
 	
 	//Stroboskop
 	var vrednosti = [];
@@ -34,6 +39,11 @@ window.addEventListener('load', function() {
 	
 	var stop = function(event) {
 		ustavi = true;
+		
+		start.innerHTML = "Zaženi Stroboskop";
+		start.removeEventListener('click', stop);
+		start.addEventListener('click', zagon);
+		
 	}
 	
 	var zagon = function(event) {
